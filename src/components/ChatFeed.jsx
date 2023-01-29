@@ -1,6 +1,7 @@
 import MyMessage from './MyMessage';
 import TheirMessage from './TheirMessage';
 import MessageForm from './MessageForm';
+import { ScrollDownBar } from 'react-chat-engine';
 
 const ChatFeed = (props) => {
   const { chats, activeChat, userName, messages } = props;
@@ -56,6 +57,7 @@ const ChatFeed = (props) => {
       <div className="message-form-container">
         <MessageForm {...props} chatId={activeChat} />
       </div>
+      <ScrollDownBar chat={chat}/>
     </div>
   );
 };

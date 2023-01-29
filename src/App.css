@@ -1,3 +1,276 @@
+/* 
+==========
+Variables
+==========
+*/
+
+:root {
+  /* dark primary */
+  --clr-primary-1: hsl(205, 69%, 19%);
+  --clr-primary-2: hsl(205, 64%, 21%);
+  --clr-primary-3: hsl(205, 60%, 23%);
+  --clr-primary-4: hsl(205, 66%, 25%);
+  /* light primary shades*/
+  --clr-primary-5: #49a6e9;
+  --clr-primary-6: hsl(205, 85%, 60%);
+  --clr-primary-7: hsl(205, 65%, 60%);
+  --clr-primary-8: hsl(205, 75%, 65%);
+  --clr-primary-9: hsl(205, 65%, 68%);
+  --clr-primary-10: hsl(205, 81%, 77%);
+  /* dark grey shades*/
+  --clr-grey-1: hsl(210,69%, 17%);
+  --clr-grey-2: hsl(209,34%, 30%);
+  --clr-grey-3: hsl(210,28%, 39%);
+  --clr-grey-4: hsl(209,39%, 33%);
+  /* light grey shades */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: #617d98;
+  --clr-grey-7: hsl(210, 32%, 69%);
+  --clr-grey-8: hsl(210, 27%, 74%);
+  --clr-grey-9: hsl(212, 36%, 86%);
+  --clr-grey-10: hsl(210, 33%, 94%);
+  /* dark secondary shades*/
+  --clr-secondary-1: hsl(181, 100%, 19%);
+  --clr-secondary-2: hsl(181, 85%, 21%);
+  --clr-secondary-3: hsl(183, 71%, 23%);
+  --clr-secondary-4: hsl(185, 95%, 25%);
+  /* light secondary shades*/
+  --clr-secondary-5: #28cab2;
+  --clr-secondary-6: hsl(182, 85%, 65%);
+  --clr-secondary-7: hsl(182, 81%, 69%);
+  --clr-secondary-8: hsl(182, 71%, 69%);
+  --clr-secondary-9: hsl(183, 80%, 75%);
+  --clr-secondary-10: hsl(181, 68%, 70%);
+  /* green shades */
+  --clr-green-1: #1aa137;
+  --clr-green-2: #06281c;
+  --clr-green-3: #0d503c;
+  --clr-green-4: #13795b;
+  --clr-primaryColor: #476a2e;
+  --clr-primaryDarkColor: #c02c03;
+  --clr-primary-light: #d4e6a5;
+  --clr-mainRed: #bd0303;
+  --minOverlay: rgba(35,10,36,.4);
+  --clr-white: #fff;
+  --clr-black: #222;
+    --clr-lime: #fc5d65;
+  --clr-dodger: #4eacdc;
+  --clr-gold: #c59d5c;
+  --clr-pink: #f28cab;
+  --clr-dark-red: hsl(360, 67%, 44%);
+  --clr-light-red: hsl(360, 44%, 67%);
+  --clr-dark-green: hsl(125, 67%, 44%);
+  --clr-light-green: hsl(125, 44%, 67%);
+  /* other vars */
+  --transition: all .3s linear;
+  --spacing: .2rem;
+  --radius: .5rem;
+  --ff-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --ff-secondary: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  --small-screen-width: 90vw;
+  --large-screen-width: 1170px;
+  --fixed-width: 40rem;
+  --shadow-1: 0 3px 1px 0 rgba(0, 0, 0, 0.1), 0 2px 1px 0 rgba(0, 0, 0, 0.6);
+  --shadow-2: 0 6px 4px -1px rgba(0, 0, 0, 0.1), 0 4px 2px -1px rgba(0, 0, 0, 0.6);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 6px 4px -3px rgba(0, 0, 0, 0.5);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+}
+.light-theme{
+  --clr-bcg: ##fc5d65;
+  --clr-font: #282c35;
+  --clr-primary: #d23669
+}
+.dark-theme{
+  --clr-bcg: ##282c35;
+  --clr-font: #fff;
+  --clr-primary: #ffa7c4
+}
+
+/* 
+=============
+GLOBAL STYLES
+=============
+ */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  width: 100%;
+}
+body {
+  font-size: .875rem;
+  font-family: var(--ff-secondary);
+  line-height: 2;
+  margin-bottom: 1.5rem;
+  color: var(--clr-bcg);
+  background: var(--clr-font);
+  letter-spacing: var(--spacing);
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--ff-primary);
+  text-transform: capitalize;
+  margin-bottom: .75rem;
+  line-height: 1.25;
+}
+h1 {
+  margin-top: 0;
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1rem;
+}
+h4 {
+  font-size: .875rem;
+}
+p {
+  color: var(--clr-grey-5);
+  margin-bottom: 1.25rem;
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+@keyframes bounce {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: .6;
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes humburger_puls {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: .4;
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+
+/* 
+==============
+GLOBAL CLASSES
+==============
+ */
+
+.section {
+  padding: 1.5rem 0;
+}
+.section-center {
+  width: var(--small-screen-width);
+  margin: 0 auto;
+  max-width: var(--large-screen-width);
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+main {
+  place-items: center;
+  display: grid;
+  min-height: 100vh;
+}
+.btn {
+  text-transform: uppercase;
+  color: var(--clr-white);
+  background: var(--clr-secondary-1);
+  border-radius: var(--radius);
+  padding: .45rem .8rem;
+  display: inline-block;
+  cursor: pointer;
+  font-size: .875rem;
+  transition: var(--transition);
+}
+.btn:hover {
+  background: var(--clr-secondary-6);
+}
+.dark-theme{
+  --clr-bcg: ##282c35;
+  --clr-font: #fff;
+  --clr-primary: #ffa7c4
+}
+.nav {
+  padding: 1.5rem 2rem;
+  background: var(--clr-white);
+  box-shadow: var(--shadow-3);
+}
+.nav-centers {
+  width: var(--small-screen-width);
+  max-width: var(--large-screen-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-centers h4 {
+  color: var(--clr-primary);
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+}
+.nav-toggle {
+  background: var(--clr-primary);
+  color: var(--clr-bcg);
+  padding: .375rem .75rem;
+  border-radius: var(--radius);
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  transition: var(--transition);
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-family: var(--ff-primary);
+  font-weight: 400;
+}
 /* CHAT STYLES */
 * {
   font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,

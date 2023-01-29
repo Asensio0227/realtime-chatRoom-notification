@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
-const projectID = '8224a6c1-819a-4f12-aa60-83e78e1b5c98';
+const projectID = process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID;
 
 const Modal = () => {
   const [username, setUsername] = useState('');
@@ -10,7 +11,7 @@ const Modal = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+toast()
     const authObject = { 'Project-ID': projectID, 'User-Name': username, 'User-Secret': password };
 
     try {
@@ -20,9 +21,10 @@ const Modal = () => {
       localStorage.setItem('password', password);
 
       window.location.reload();
-      setError('');
+      toast.success(`Hello There ${username}`);
     } catch (err) {
-      setError('Oops, incorrect credentials.');
+      setError('Oops, incorrect credentials.')
+      toast.error('Oops, incorrect credentials.');
     }
   };
 
@@ -38,8 +40,8 @@ const Modal = () => {
               <span>Start chatting</span>
             </button>
           </div>
+          <p>{error}</p>
         </form>
-        <h1>{error}</h1>
       </div>
     </div>
 
